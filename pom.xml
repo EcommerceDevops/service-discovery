@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Using the parent published in GitHub Packages -->
+    <parent>
+        <groupId>com.selimhorri</groupId>
+        <artifactId>ecommerce-parent</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>service-discovery</artifactId>
+    <name>service-discovery</name>
+    <description>Spring Boot microservice!</description>
+    <packaging>jar</packaging>
+
+    <!-- Repository required to access the parent from GitHub Packages -->
+    <repositories>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/EcommerceDevops/ecommerce-parent</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+        <finalName>${project.artifactId}-v${project.version}</finalName>
+    </build>
+</project>
